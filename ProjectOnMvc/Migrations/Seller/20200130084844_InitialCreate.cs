@@ -1,0 +1,34 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+namespace ProjectOnMvc.Migrations.Seller
+{
+    public partial class InitialCreate : Migration
+    {
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.CreateTable(
+                name: "seller",
+                columns: table => new
+                {
+                    Sid = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Sname = table.Column<string>(nullable: false),
+                    Pass = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: true),
+                    Phone = table.Column<string>(nullable: false),
+                    Date = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_seller", x => x.Sid);
+                });
+        }
+
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: "seller");
+        }
+    }
+}

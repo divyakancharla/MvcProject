@@ -1,0 +1,16 @@
+﻿@using Microsoft.EntityFrameworkCore
+@using ProjectOnMvc.Models
+@model IEnumerable<Buyer>
+@{
+    ViewData["Title"] = "Details";
+}
+@foreach(var item in Model)
+{
+    <h2>@item.Bid</h2>
+    <h3>@item.Bname</h3>
+    <h3>@item.Date</h3>
+    <h4>@item.Email</h4>
+}
+<h1>Details</h1>
+
+

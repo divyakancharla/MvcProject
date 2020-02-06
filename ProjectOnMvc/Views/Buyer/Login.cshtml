@@ -1,0 +1,47 @@
+﻿@model ProjectOnMvc.Models.Buyer
+
+@{
+    Layout = "~/Views/Shared/_Layoutlogin.cshtml";
+   // ViewData["Title"] = "Login";
+}
+
+    <div style="background-color:white;width:100px;">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Login">
+                        <div class="form-group">
+                            <h3 style="text-align:center">LOGIN</h3>
+                        </div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Bname" class="control-label"></label>
+                            <input asp-for="Bname" class="form-control" />
+                            <span asp-validation-for="Bname" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Pass" class="control-label"></label>
+                            <input asp-for="Pass" class="form-control" />
+                            <span asp-validation-for="Pass" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn btn-primary" />
+                        </div>
+                        <div>
+                            <a asp-action="Index">New User <i>Create One</i></a>
+                        </div>
+                        <div>
+                            @ViewBag.message
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+           
+
+            @*section Scripts {
+                    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+                }*@
